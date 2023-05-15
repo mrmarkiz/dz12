@@ -44,6 +44,8 @@ namespace dz12
                     case 5:
                         Console.Write("Enter element to enqueue(value, priority): ");
                         string[] input = Console.ReadLine().Split(' ');
+                        if (input.Length < 2)
+                            break;
                         int.TryParse(input[1], out int prior);
                         queue.Enqueue(new Pair<string>(input[0], prior));
                         break;
