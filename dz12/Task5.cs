@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace dz12
 {
-    internal class Task4
+    internal class Task5
     {
         public static void Run()
         {
-            Console.WriteLine("This linked list has string type");
-            LinkedList<string> list = new LinkedList<string>();
+            Console.WriteLine("This double-linked list has string type");
+            DoubleLinkedList<string> list = new DoubleLinkedList<string>();
             int choice, subchoice;
             string val;
             do
@@ -72,10 +72,10 @@ namespace dz12
         }
     }
 
-    internal class LinkedList<T>
+    internal class DoubleLinkedList<T>
     {
         List<T> list;
-        public LinkedList()
+        public DoubleLinkedList()
         {
             list = new List<T>();
         }
@@ -115,8 +115,8 @@ namespace dz12
         {
             if (list.Count() == 0)
                 return;
-            List<T> result = new List<T>(0);
-            for (int i = 0; i < list.Count - 1; i++) 
+            List<T> result = new List<T>(list.Count() - 1);
+            for (int i = 0; i < list.Count - 1; i++)
             {
                 result.Add(list[i]);
             }
@@ -132,7 +132,7 @@ namespace dz12
 
         public void Show()
         {
-            foreach(var item in list)
+            foreach (var item in list)
             {
                 Console.Write($"{item}  ");
             }
